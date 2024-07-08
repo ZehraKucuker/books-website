@@ -1,14 +1,15 @@
 import React from 'react';
 import useStyles from './stylesheet';
 import { useState } from 'react';
-import { FiAlignJustify } from "react-icons/fi";
 import { Link } from 'react-router-dom';
+import { Fade as Hamburger } from 'hamburger-react';
+import { FaLeaf } from 'react-icons/fa';
 
 const Header = () => {
   const classes = useStyles();
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className={classes.headerContainer} style={{background: "linear-gradient(#1349c6, #688fea)" }}>
+    <div className={classes.headerContainer} style={{backgroundImage: "linear-gradient(to right, #0036a6, #426cc4)" }}>
         <div className={classes.headerLeftSideContainer}>
             <img
                 src="./images/logo4.png"
@@ -50,7 +51,7 @@ const Header = () => {
             
         </div>
         <div className={classes.menuShow}>
-            <FiAlignJustify onClick={() => setIsMenuOpen(!isMenuOpen)}/>
+            <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen}/>
         </div>
     </div>
   );

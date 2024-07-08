@@ -3,21 +3,29 @@ import {createUseStyles} from 'react-jss';
 const useStyles = createUseStyles({
     headerContainer: {
         boxShadow: "1px 3px 1px #9E9E9E",
-        justifyContent: "space-between",
-        paddingRight: "100px",
         alignItems: "center",
-        paddingLeft: "100px",
         flexDirection: "row",
         userSelect: "none",
         display: "flex",
-        padding: "8px",
         width: "100%",
-        height: 60
+        height: "80px",
+        "@media screen and (max-width: 900px)":{
+            justifyContent:"space-between"
+        }
     },
     headerLeftSideContainer: {
         display: "flex",
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        width:"40%",
+        marginLeft:"20px",
+       
+    },
+    headerRightSideContainer:{
+        width:"60%",
+        marginRight:"20px",
+        "@media screen and (max-width: 900px)":{
+        }
     },
     logo: {
         height: "50px",
@@ -31,16 +39,54 @@ const useStyles = createUseStyles({
         fontSize: "24px"
     },
     menuVisible: {
-        
+        justifyContent: "space-between",
+        display:"flex",
+        "@media screen and (max-width: 900px)":{
+            display:"flex",
+            flexDirection:"column",
+            justifyContent: "space-between",
+            backgroundColor: "#7c98d2",
+            transition:"all .5s",
+            position:"absolute",
+            opacity:"0.9",
+            height:"100%",
+            width:"350px",
+            top:"80px",
+            right:"0px",
+            zIndex:"2",
+        }
     },
     menuHidden: {
-        
+        justifyContent:"space-between",
+        alignItems:"center",
+        display:"flex",
+        "@media screen and (max-width: 900px)": {
+            backgroundColor:"#7c98d2",
+            justifyContent:"center",
+            flexDirection:"column",
+            transition:"all .5s",
+            position:"fixed",
+            display:"flex",
+            right:"-350px",
+            width:"350px",
+            height:"80vh",
+            top:"100px",
+            zIndex:"2",
+        }
     },
     menuContentContainer: {
+        width: "100%",
         display: "flex",
-        flexDirection: "row",
-        gap: 80,
-        padding: 150
+        marginRight: "50px",
+        justifyContent:"space-between",
+        "@media screen and (max-width: 900px)": {
+            flexDirection:"column",
+            display: "flex",
+            alignItems: "start",
+            padding:"60px 100px",
+            width:"175px",
+            gap: "30px"
+        }
     },
     menuContent: {
         textDecoration: "none",
@@ -49,8 +95,11 @@ const useStyles = createUseStyles({
         fontWeight: "inherit",
     },
     menuShow: {
-        justifyContent: "flex-end",
-        
+        display:"none",
+        "@media screen and (max-width: 900px)":{
+            display:"flex",
+            marginRight: "20px"
+        }
     }
 })
 

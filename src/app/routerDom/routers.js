@@ -1,11 +1,11 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import Home from '../pages/home';
-import Literature from '../pages/literature';
-import Philosophy from '../pages/philosophy';
-import Culture from '../pages/culture';
-import Psychology from '../pages/psychology';
-import History from '../pages/history';
+import Home from '../pages/Welcome/index';
+import Literature from '../pages/Literature/index';
+import Philosophy from '../pages/Philosophy/index';
+import Culture from '../pages/Culture/index';
+import Psychology from '../pages/Psychology/index';
+import History from '../pages/History/index';
 
 function Routers() {
   return (
