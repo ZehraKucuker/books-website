@@ -3,16 +3,15 @@ import useStyles from './stylesheet';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Fade as Hamburger } from 'hamburger-react';
-import { FaLeaf } from 'react-icons/fa';
 
 const Header = () => {
   const classes = useStyles();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className={classes.headerContainer} style={{backgroundImage: "linear-gradient(to right, #0036a6, #426cc4)" }}>
+    <div className={classes.headerContainer} style={{backgroundImage: "linear-gradient(to right, #001b53, #204899)" }}>
         <div className={classes.headerLeftSideContainer}>
             <img
-                src="./images/logo4.png"
+                src="./images/logo2.png"
                 className={classes.logo}
                 alt=""
             />

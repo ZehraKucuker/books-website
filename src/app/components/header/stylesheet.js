@@ -1,31 +1,29 @@
 import {createUseStyles} from 'react-jss';
+import { clickEvent } from '../../themes/helpers';
 
 const useStyles = createUseStyles({
     headerContainer: {
         boxShadow: "1px 3px 1px #9E9E9E",
-        alignItems: "center",
         flexDirection: "row",
+        alignItems: "center",
         userSelect: "none",
         display: "flex",
-        width: "100%",
         height: "80px",
-        "@media screen and (max-width: 900px)":{
+        width: "100%",
+        "@media screen and (max-width: 900px)": {
             justifyContent:"space-between"
         }
     },
     headerLeftSideContainer: {
-        display: "flex",
-        flexDirection: "row",
         alignItems: "center",
-        width:"40%",
-        marginLeft:"20px",
-       
+        flexDirection: "row",
+        marginLeft:"50px",
+        display: "flex",
+        width:"40%"
     },
     headerRightSideContainer:{
-        width:"60%",
         marginRight:"20px",
-        "@media screen and (max-width: 900px)":{
-        }
+        width:"60%"
     },
     logo: {
         height: "50px",
@@ -36,23 +34,24 @@ const useStyles = createUseStyles({
     },
     headerContent: {
         fontWeight: "bold",
-        fontSize: "24px"
+        fontSize: "24px",
+        color: "#ffffff"
     },
     menuVisible: {
         justifyContent: "space-between",
         display:"flex",
-        "@media screen and (max-width: 900px)":{
-            display:"flex",
-            flexDirection:"column",
+        "@media screen and (max-width: 900px)": {
             justifyContent: "space-between",
-            backgroundColor: "#7c98d2",
+            backgroundColor: "#577ece",
+            flexDirection:"column",
             transition:"all .5s",
             position:"absolute",
+            display:"flex",
             opacity:"0.9",
             height:"100%",
             width:"350px",
-            top:"80px",
             right:"0px",
+            top:"80px",
             zIndex:"2",
         }
     },
@@ -61,7 +60,6 @@ const useStyles = createUseStyles({
         alignItems:"center",
         display:"flex",
         "@media screen and (max-width: 900px)": {
-            backgroundColor:"#7c98d2",
             justifyContent:"center",
             flexDirection:"column",
             transition:"all .5s",
@@ -75,30 +73,50 @@ const useStyles = createUseStyles({
         }
     },
     menuContentContainer: {
-        width: "100%",
-        display: "flex",
-        marginRight: "50px",
         justifyContent:"space-between",
+        marginRight: "50px",
+        display: "flex",
+        width: "100%",
+        ...clickEvent,
         "@media screen and (max-width: 900px)": {
             flexDirection:"column",
-            display: "flex",
-            alignItems: "start",
             padding:"60px 100px",
+            alignItems: "start",
+            fontSize: "30px",
+            display: "flex",
             width:"175px",
             gap: "30px"
+        },
+        "&:hover div:not(:hover)": {
+            filter: "blur(0.5px)",
+            opacity: 0.5
+        },
+        "&:active": {
+            transition: "transform 0.05s",
+          transform: "translateY(1px)",
         }
     },
     menuContent: {
+        transition: "0.5s ease",
         textDecoration: "none",
-        fontSize: 20,
-        color: "#000000",
         fontWeight: "inherit",
+        color: "#ffffff",
+        fontSize: 20,
+        "&:hover": {
+            color: "#00143c"
+        },
+        "@media screen and (max-width: 900px)": {
+            "&:hover": {
+                color: "#001b53"
+            }
+        }
     },
     menuShow: {
         display:"none",
         "@media screen and (max-width: 900px)":{
-            display:"flex",
-            marginRight: "20px"
+            marginRight: "20px",
+            color: "#ffffff",
+            display:"flex"
         }
     }
 })

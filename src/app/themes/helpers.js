@@ -1,15 +1,16 @@
-export const clickEvent = (theme) => {
+export const clickEvent = () => {
     return {
         "&:hover": {
-            userSelect: "none",
             cursor: "pointer",
-            opacity: 0.75,
-            color: theme && theme.aTagHoverColorKey ? `${theme.colors[theme.aTagHoverColorKey]} !important` : undefined
+            color: "#7ba6ff"
         },
         "&:active": {
             transform: "translateY(2px)",
             transition: "transform 0.1s",
             userSelect: "none"
+        },
+        "&:selection": {
+            color: "#7ba6ff"
         }
     };
 };

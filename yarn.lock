@@ -5101,6 +5101,11 @@ gzip-size@^6.0.0:
   dependencies:
     duplexer "^0.1.2"
 
+hamburger-react@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.npmjs.org/hamburger-react/-/hamburger-react-2.5.1.tgz"
+  integrity sha512-XlTIinYeYzLu76q4Vd9olwOJP0hFgAeZfJFX6tTT/ufTLhmOjI77CGFYIwGc6gcDeeT86660ZoKx3/L67vdZEw==
+
 handle-thing@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/handle-thing/-/handle-thing-2.0.1.tgz"
@@ -8261,7 +8266,7 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
-react@*, react@^18.0.0, react@^18.3.1, "react@>= 16", react@>=16.3, react@>=16.8, react@>=16.8.6:
+react@*, "react@^16.8 || ^17 || ^18", react@^18.0.0, react@^18.3.1, "react@>= 16", react@>=16.3, react@>=16.8, react@>=16.8.6:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react/-/react-18.3.1.tgz"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
