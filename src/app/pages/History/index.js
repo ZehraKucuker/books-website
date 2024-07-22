@@ -1,9 +1,9 @@
 import React from 'react';
 
 const History = () => {
-  return (
-    <div>history</div>
-  )
-}
+    return (
+        <div>history</div>
+    );
+};
 
-export default History
+export default History;

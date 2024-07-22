@@ -1,22 +1,22 @@
-import {createUseStyles} from 'react-jss';
+import {
+    createUseStyles
+} from 'react-jss';
 
 const useStyles = createUseStyles({
     literatureContainer: {
-        display: 'flex',
+        backgroundColor: ({
+            colors
+        })=>colors.mainBackground,
         flexDirection: 'column',
-        width: "100%",
-        height: "auto"
+        display: 'flex',
+        height: "auto",
+        width: "100%"
     },
     title: {
+        justifyContent: "center",
         display: "flex",
-        alignItems: "flex-start"
-    },
-    cardsContainer: {
-        
-    },
-    card: {
-
+        fontSize: 18
     }
-})
+});
 
 export default useStyles;

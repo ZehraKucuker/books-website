@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Psychology = () => {
-  return (
-    <div>psychology</div>
-  )
-}
+    return (
+        <div>psychology</div>
+    );
+};
 
-export default Psychology
+export default Psychology;

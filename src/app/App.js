@@ -1,15 +1,26 @@
 import React from 'react';
-import Router from './routerDom/routers';
-import useStyles from './stylesheet';
-import Header from './components/header';
+import Routers from './routerDom/routers';
+import {
+    Header, Footer
+} from '../components';
+import {
+    ThemeProvider 
+} from './context/themeContext';
+import {
+    LanguageProvider 
+} from './context/languageContext';
 
 const App = () => {
-  const classes = useStyles();
-  return (
-    <div className={classes.container}>
-      <Header/>
-      <Router/>
-    </div>
-  )
-}
+    return (
+        <div>
+            <ThemeProvider>
+                <LanguageProvider> 
+                    <Header/>
+                    <Routers/>
+                    <Footer/>
+                </LanguageProvider> 
+            </ThemeProvider>
+        </div>
+    );
+};
 export default App;

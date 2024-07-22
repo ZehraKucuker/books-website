@@ -1,7 +1,10 @@
-import {createUseStyles} from 'react-jss';
+import {
+    createUseStyles
+} from 'react-jss';
 
 const useStyles = createUseStyles({
     container: {
+        backgroundColor: "red",
         position: "relative",
         display: "flex",
         height: "100%",
@@ -13,7 +16,7 @@ const useStyles = createUseStyles({
         height: "100%",
         width: "100%",
         zIndex: 1
-      },
+    },
     filter: {
         backgroundColor: "rgba(0,0,0,0.5)",
         justifyContent: "space-around",
@@ -28,11 +31,8 @@ const useStyles = createUseStyles({
         top: 0,
     },
     image: {
-        height: "750px",
-        width: "100%",
-        "@media screen and (min-width: 1000px)": {
-            height: "900px"
-        }
+        height: "1000px",
+        width: "100%"
     },
     textContainer: {
         justifyContent: "center",
@@ -40,34 +40,49 @@ const useStyles = createUseStyles({
         alignItems: "center",
         display: "flex",
         zIndex: 2,
+        gap: 80,
+        "@media screen and (max-width: 1000px)": {
+            gap: 20
+        },
+        "@media screen and (max-width: 750px)": {
+            gap: 10
+        }
     },
     title: {
         textShadow: "2px 2px #000000",
-        marginBottom: "50px",
+        fontSize: "2.2rem",
         color: "#d2d4d9",
-        fontSize: "2rem",
         display: "flex",
         width: "50%",
         "@media screen and (max-width: 1000px)": {
-            marginBottom: "50px",
-            fontSize: "1.75rem",
-            display: "flex"
+            fontSize: "1.8rem",
+        },
+        "@media screen and (max-width: 750px)": {
+            fontSize: "1.5rem",
+        },
+        "@media screen and (max-width: 620px)": {
+            fontSize: "1.3rem",
         }
     },
     text: {
         textShadow: "1px 1px #000000",
         letterSpacing: "0.3px",
-        fontSize: "1.1rem",
+        fontSize: "1.2rem",
         textIndent: "30px",
         color: "#d2d4d9",
         display: "flex",
         width: "50%",
         "@media screen and (max-width: 1000px)": {
-            fontSize: "0.85rem",
+            fontSize: "0.95rem",
             textIndent: "20px",
-            display: "flex"
+        },
+        "@media screen and (max-width: 750px)": {
+            fontSize: "0.9rem",
+        },
+        "@media screen and (max-width: 620px)": {
+            fontSize: "0.8rem",
         }
     }
-})
+});
 
 export default useStyles;

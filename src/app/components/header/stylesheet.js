@@ -1,12 +1,18 @@
-import {createUseStyles} from 'react-jss';
-import { clickEvent } from '../../themes/helpers';
+import {
+    createUseStyles
+} from 'react-jss';
+import {
+    clickEvent 
+} from '../../themes/helpers/index';
 
 const useStyles = createUseStyles({
     headerContainer: {
+        backgroundColor: ({
+            colors
+        })=>colors.backgroundColor,
         boxShadow: "1px 3px 1px #9E9E9E",
         flexDirection: "row",
         alignItems: "center",
-        userSelect: "none",
         display: "flex",
         height: "80px",
         width: "100%",
@@ -22,7 +28,7 @@ const useStyles = createUseStyles({
         width:"40%"
     },
     headerRightSideContainer:{
-        marginRight:"20px",
+        marginRight:"30px",
         width:"60%"
     },
     logo: {
@@ -30,20 +36,33 @@ const useStyles = createUseStyles({
         width: "50px"
     },
     headerDescContainer: {
-        paddingLeft: "20px",
+        marginLeft: "20px",
+        "&:active": {
+            transition: "transform 0.05s",
+            transform: "translateY(1px)",
+        }
     },
     headerContent: {
+        color: ({
+            colors
+        })=>colors.textColor,
         fontWeight: "bold",
         fontSize: "24px",
-        color: "#ffffff"
+        "&:hover": {
+            color: ({
+                colors
+            })=>colors.headHoverColor,
+        }
     },
     menuVisible: {
         justifyContent: "space-between",
         display:"flex",
         "@media screen and (max-width: 900px)": {
             justifyContent: "space-between",
-            backgroundColor: "#577ece",
-            flexDirection:"column",
+            backgroundColor: ({
+                colors
+            })=>colors.menuColor,
+            flexDirection:"column-reverse",
             transition:"all .5s",
             position:"absolute",
             display:"flex",
@@ -74,51 +93,88 @@ const useStyles = createUseStyles({
     },
     menuContentContainer: {
         justifyContent:"space-between",
-        marginRight: "50px",
         display: "flex",
         width: "100%",
         ...clickEvent,
         "@media screen and (max-width: 900px)": {
+            paddingBottom: "400px",
             flexDirection:"column",
-            padding:"60px 100px",
+            paddingLeft: "80px",
             alignItems: "start",
             fontSize: "30px",
             display: "flex",
             width:"175px",
-            gap: "30px"
-        },
-        "&:hover div:not(:hover)": {
-            filter: "blur(0.5px)",
-            opacity: 0.5
+            gap: "10px"
         },
         "&:active": {
             transition: "transform 0.05s",
-          transform: "translateY(1px)",
+            transform: "translateY(1px)",
         }
     },
     menuContent: {
+        color: ({
+            colors
+        })=>colors.textColor,
         transition: "0.5s ease",
         textDecoration: "none",
         fontWeight: "inherit",
-        color: "#ffffff",
         fontSize: 20,
         "&:hover": {
-            color: "#00143c"
+            color: ({
+                colors
+            })=>colors.headHoverColor
         },
         "@media screen and (max-width: 900px)": {
             "&:hover": {
-                color: "#001b53"
+                color: ({
+                    colors
+                })=>colors.backgroundColor
             }
         }
     },
     menuShow: {
         display:"none",
         "@media screen and (max-width: 900px)":{
+            color: ({
+                colors
+            })=>colors.textColor,
             marginRight: "20px",
-            color: "#ffffff",
             display:"flex"
         }
+    },
+    iconContainer :{
+        color: ({
+            colors
+        })=>colors.textColor,
+        flexDirection: "column",
+        marginLeft: "35px",
+        display:"flex",
+        gap: "5px",
+        "@media screen and (max-width: 900px)": {
+            flexDirection: "row",
+            paddingLeft: "60px",
+            paddingTop: "60px",
+            alignItems: "start",
+            fontSize: "30px",
+            display: "flex",
+            width:"175px",
+            gap: "20px"
+        }
+    },
+    iconLang:{
+        "&:hover": {
+            color: ({
+                colors
+            })=>colors.headHoverColor,
+        }
+    },
+    iconTheme: {
+        "&:hover": {
+            color: ({
+                colors
+            })=>colors.headHoverColor,
+        }
     }
-})
+});
 
 export default useStyles;
