@@ -21,7 +21,7 @@ const Home = () => {
     return (
         <div className={classes.container}>
             <div className={classes.content}>
-                <img src="./images/home.jpg" className={classes.image} />
+                <img src="./images/icons/home.jpg" className={classes.image} />
                 <div className={classes.filter}>
                     <div className={classes.textContainer}>
                         <div className={classes.title}>

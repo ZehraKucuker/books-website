@@ -10,7 +10,6 @@ const useStyles = createUseStyles({
         backgroundColor: ({
             colors
         })=>colors.backgroundColor,
-        boxShadow: "1px 3px 1px #9E9E9E",
         flexDirection: "row",
         alignItems: "center",
         display: "flex",

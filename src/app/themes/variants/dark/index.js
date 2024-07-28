@@ -6,7 +6,6 @@ const color = {
     textColor: "#ffffff",
     headHoverColor: "#1e5cda",
     menuColor: "#577ece",
-    boxShadow: "rgba(255, 255, 255, 0.2)",
 };
 const dark = {
     key: "dark",

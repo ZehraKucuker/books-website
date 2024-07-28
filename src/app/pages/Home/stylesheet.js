@@ -4,7 +4,6 @@ import {
 
 const useStyles = createUseStyles({
     container: {
-        backgroundColor: "red",
         position: "relative",
         display: "flex",
         height: "100%",
@@ -29,6 +28,7 @@ const useStyles = createUseStyles({
         right: 0,
         left: 0,
         top: 0,
+        zIndex: 2
     },
     image: {
         height: "1000px",
@@ -49,7 +49,7 @@ const useStyles = createUseStyles({
         }
     },
     title: {
-        textShadow: "2px 2px #000000",
+        textShadow: "2px 2px #000",
         fontSize: "2.2rem",
         color: "#d2d4d9",
         display: "flex",
@@ -65,7 +65,7 @@ const useStyles = createUseStyles({
         }
     },
     text: {
-        textShadow: "1px 1px #000000",
+        textShadow: "1px 1px #000",
         letterSpacing: "0.3px",
         fontSize: "1.2rem",
         textIndent: "30px",

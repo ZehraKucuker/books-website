@@ -6,41 +6,40 @@ const useStyles = createUseStyles({
     cardContainer: {
         backgroundColor: ({
             colors
-        })=>colors.mainBackground
-    },
-    card: {
-        height: "300px",
+        })=>colors.mainBackground,
+        justifyContent: "center",
+        paddingBottom: "50px",
         display: "flex",
-        width: '400px'
+        height: "300px",
+        width: "100%"
+    },
+    cardContentContainer: {
+        paddingRight: "90px",
+        paddingLeft: "90px",
+        display: "felx"
     },
     cardContent: {
-        transformStyle: "preserve-3d",
-        transition: "transform 3s",
-        padding: "15rem 5rem",
-        position: "relative"
-    },
-    "card:hover cardContent": {
-        transform: "rotateY(180deg)"
-    },
-    cardFront: {
-        transformStyle: "preserve-3d",
-        backfaceVisibility: "hidden",
-        justifyContent: "center",
-        flexDirection: "column",
-        position: "absolute",
-        padding: "2rem",
+        position: "relative",
         display: "flex",
-        inset: 0
+        height: "300px",
+        width: "200px",
     },
-    cardBack: {
-        transformStyle: "preserve-3d",
-        backfaceVisibility: "hidden",
+    cardBackSide: {
         justifyContent: "center",
-        flexDirection: "column",
-        position: "absolute",
+        flexDirection:"column",
+        fontSize: "10px",
         display: "flex",
-        padding: "2rem",
-        inset: 0,
+        bottom: 0,
+        top: 0
+    },
+    button: {
+        backgroundColor: ({
+            colors
+        })=>colors.backgroundColor,
+        justifyContent: "center",
+        borderRadius: "30px",
+        display: "flex",
+        width: "100%"
     }
 });
 

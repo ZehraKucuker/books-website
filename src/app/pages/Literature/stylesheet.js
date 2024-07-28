@@ -9,13 +9,16 @@ const useStyles = createUseStyles({
         })=>colors.mainBackground,
         flexDirection: 'column',
         display: 'flex',
-        height: "auto",
-        width: "100%"
+        height: "100%",
+        width: "100%",
     },
     title: {
         justifyContent: "center",
+        alignItems: "center",
+        height: "150px",
         display: "flex",
-        fontSize: 18
+        width: "100%",
+        fontSize: 18,
     }
 });
 

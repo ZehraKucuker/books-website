@@ -2,7 +2,7 @@ import React from 'react';
 import Routers from './routerDom/routers';
 import {
     Header, Footer
-} from '../components';
+} from './components';
 import {
     ThemeProvider 
 } from './context/themeContext';

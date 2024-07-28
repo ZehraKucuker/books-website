@@ -46,7 +46,7 @@ const Header = () => {
         <div className={classes.headerContainer} >
             <div className={classes.headerLeftSideContainer}>
                 <img
-                    src="./images/logo2.png"
+                    src="./images/icons/logo2.png"
                     className={classes.logo}
                     alt=""
                 />
@@ -82,12 +82,12 @@ const Header = () => {
                     </div>
                     <div className={classes.iconContainer}>
                         <div className={classes.iconLang}>
-                            <GrLanguage onClick={()=>changeLanguage()}/>
+                            <GrLanguage size="1.1rem" onClick={()=>changeLanguage()}/>
                         </div>
                         <div className={classes.iconTheme}>
                             {   isIconActive ? 
-                                <FaMoon onClick={handleThemeChange} /> : 
-                                <IoSunnySharp onClick={handleThemeChange} />
+                                <FaMoon size="1.1rem" onClick={handleThemeChange} /> : 
+                                <IoSunnySharp size="1.1rem" onClick={handleThemeChange} />
                             }
                         </div>
                     </div>

@@ -22,4 +22,4 @@ export const LanguageProvider=({
         </LanguageContext.Provider>
     );
 };
-export const useLanguage = ()=>useContext(LanguageContext);
+export const useLanguage = () => useContext(LanguageContext);
