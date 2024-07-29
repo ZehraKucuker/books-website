@@ -1,7 +1,4 @@
-import React, {
-    useEffect,
-    useState
-} from 'react';
+import React from 'react';
 import LiteratureSection from './literatureSection';
 import useStyles from './stylesheet';
 import {
@@ -23,14 +20,11 @@ const Literature = () => {
         colors: activeTheme.color 
     });
     
-    return (
-        <div className={classes.literatureContainer}>
-            <div className={classes.title}>
-                <h1>{lang.category1}</h1>
-            </div>
-            <LiteratureSection/>
+    return <div className={classes.literatureContainer}>
+        <div className={classes.title}>
+            <h1>{lang.category1}</h1>
         </div>
-    );
+        <LiteratureSection/>
+    </div>;
 };
-
 export default Literature;

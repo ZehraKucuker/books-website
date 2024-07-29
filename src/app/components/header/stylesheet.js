@@ -7,7 +7,7 @@ import {
 
 const useStyles = createUseStyles({
     headerContainer: {
-        backgroundColor: ({
+        backgroundImage: ({
             colors
         })=>colors.backgroundColor,
         flexDirection: "row",
@@ -45,6 +45,7 @@ const useStyles = createUseStyles({
         color: ({
             colors
         })=>colors.textColor,
+        textDecoration: "none",
         fontWeight: "bold",
         fontSize: "24px",
         "&:hover": {
@@ -57,41 +58,27 @@ const useStyles = createUseStyles({
         justifyContent: "space-between",
         display:"flex",
         "@media screen and (max-width: 900px)": {
-            justifyContent: "space-between",
+            justifyContent: "space-evenly",
             backgroundColor: ({
                 colors
             })=>colors.menuColor,
             flexDirection:"column-reverse",
             transition:"all .5s",
-            position:"absolute",
+            position:"fixed",
             display:"flex",
             opacity:"0.9",
             height:"100%",
             width:"350px",
-            right:"0px",
+            right: ({
+                isMenuOpen 
+            }) => (isMenuOpen ? "0px" : "-350px"),
             top:"80px",
-            zIndex:"2",
-        }
-    },
-    menuHidden: {
-        justifyContent:"space-between",
-        alignItems:"center",
-        display:"flex",
-        "@media screen and (max-width: 900px)": {
-            justifyContent:"center",
-            flexDirection:"column",
-            transition:"all .5s",
-            position:"fixed",
-            display:"flex",
-            right:"-350px",
-            width:"350px",
-            height:"80vh",
-            top:"100px",
-            zIndex:"2",
+            zIndex:"2"
         }
     },
     menuContentContainer: {
         justifyContent:"space-between",
+        alignItems: "center",
         display: "flex",
         width: "100%",
         ...clickEvent,
@@ -175,5 +162,4 @@ const useStyles = createUseStyles({
         }
     }
 });
-
 export default useStyles;

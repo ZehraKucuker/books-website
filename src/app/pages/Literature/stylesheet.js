@@ -4,12 +4,12 @@ import {
 
 const useStyles = createUseStyles({
     literatureContainer: {
-        backgroundColor: ({
+        backgroundImage: ({
             colors
         })=>colors.mainBackground,
         flexDirection: 'column',
         display: 'flex',
-        height: "100%",
+        height: "700px",
         width: "100%",
     },
     title: {
@@ -21,5 +21,4 @@ const useStyles = createUseStyles({
         fontSize: 18,
     }
 });
-
 export default useStyles;

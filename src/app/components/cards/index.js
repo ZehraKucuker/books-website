@@ -5,6 +5,9 @@ import useStyles from './stylesheet';
 import {
     useTheme 
 } from '../../context/themeContext';
+import {
+    FaTimes 
+} from "react-icons/fa";
 
 const Cards = (
     {
@@ -17,6 +20,10 @@ const Cards = (
     const classes = useStyles({
         colors: activeTheme.color
     });
+    const [showDiv, setShowDiv] = useState(false);
+    const handleButtonClick = () => {
+        setShowDiv(!showDiv);
+    };
     const [isHover, setIsHover] = useState(false);
     const handleMouseEnter = () => {
         setIsHover(true);
@@ -24,63 +31,52 @@ const Cards = (
     const handleMouseLeave = () =>{
         setIsHover(false);
     };
-    return (
-        <div>
-            <div className={classes.cardContainer}>
-                <div className={classes.cardContentContainer} style={{
-                    display: "flex",
-                }}>
-                    <div className={classes.cardContent}  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        <div className={classes.card}>
-                            {
-                                isHover ? <img src="./images/icons/sayfa.jpg" alt={title} style={{
-                                    WebkitTransform: "scale(1.5)",
-                                    transform: "scale(1.5)",
-                                    position:"relative",
-                                    height: "300px",
-                                    width: "100%",
-                                    opacity: 0.8,
-                                    zIndex: 2
-                                }}/> : <img src={imageURL} alt={title} style={{
-                                    height: "300px",
-                                    width: "100%"
-                                }}/>
-                            }
-                            <div className={classes.cardBackSide} style={isHover ? {
-                                position: "absolute",
-                                zIndex: 3,
-                            } : {
-                                display: "none"
-                            }}>
-                                <h1 style={{
-                                    fontSize: "16px"
-                                }}>{title}</h1>
-                                <h2 style={{
-                                    fontSize: "12px"
-                                }}>{author}</h2>
-                                <h3 style={{
-                                    fontSize: "12px"
-                                }}>{publisher}</h3>
-                                <p style={{
-                                    fontSize: "8px"
-                                }}>{description}</p>
-                                <button className={classes.button}>
-                                    <a style={{
-                                        textDecoration: "none",
-                                        fontSize: "15px",
-                                        color: "white"
-                                    }} href={buyURL} target="_blank">Satın Al</a>
-                                </button>
+    return <div>
+        <div className={classes.cardContainer}>
+            <div className={classes.cardContentContainer} style={{
+                display: "flex",
+            }}>
+                <div className={classes.cardContent} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    <div className={classes.card} style={{
+                        boxShadow: isHover ? "6px 10px 6px #000" : "3px 6px 3px #000",
+                    }}>
+                        <img src={imageURL} alt={title} onClick={handleButtonClick} style={{
+                            height: "300px",
+                            width: "100%",
+                            zIndex: 1
+                        }}/>
+                        {showDiv && (
+                            <div className={classes.centerContainer}>
+                                <FaTimes style={{
+                                    position: "fixed",
+                                    right: 30,
+                                    top: 30,
+                                    width: "30px",
+                                    height: "30px"
+                                }} onClick={handleButtonClick}/>
+                                <div className={classes.centerLeftSide}>
+                                    <h1 style={{
+                                        fontSize: 30
+                                    }}>{title}</h1>
+                                    <h3>{author} | {publisher}</h3>
+                                </div>
+                                <div style={{
+                                    width: "40px",
+                                    height: "400px",
+                                    borderLeft: "2px solid #0a1526"
+                                }}></div>  
+                                <div className={classes.centerRightSide}>
+                                    <p className={classes.description}>{description}</p>
+                                    <button className={classes.button}>
+                                        <a className={classes.buttonText} href={buyURL} target="_blank">Detaylı bilgi için tıklayınız.</a>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        
+                        )}
                     </div>
                 </div>
-            
             </div>
         </div>
-        
-    );
+    </div>;
 };
-
 export default Cards;

@@ -4,7 +4,7 @@ import {
 
 const useStyles = createUseStyles({
     footerContainer: {
-        backgroundColor:({
+        backgroundImage:({
             colors
         })=>colors.backgroundColor,
         justifyContent: "space-between",
@@ -43,5 +43,4 @@ const useStyles = createUseStyles({
         }
     }
 });
-
 export default useStyles;

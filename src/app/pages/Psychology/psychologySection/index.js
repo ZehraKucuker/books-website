@@ -8,7 +8,7 @@ import {
 } from '../../../components';
 import axios from 'axios';
 
-const LiteratureSection = () => {
+const PsychologySection = () => {
     const [cards,setCards]=useState([]);
     const [isLoading, setIsLoading]=useState(true);
     const classes = useStyles();
@@ -17,7 +17,7 @@ const LiteratureSection = () => {
             try {
                 const {
                     data: res
-                } = await axios.get(`http://localhost:3001/literature`);
+                } = await axios.get(`http://localhost:3001/psychology`);
                 setCards(res.payload);
                 setIsLoading(false);
             } catch (err) {
@@ -47,4 +47,5 @@ const LiteratureSection = () => {
         }
     </div>;
 };
-export default LiteratureSection;
+
+export default PsychologySection;

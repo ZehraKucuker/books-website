@@ -1,11 +1,11 @@
 const color = {
     primary: "#001b53",
-    backgroundColor: "#001b53",
-    backgroundImage: "linear-gradient(to right, #001b53, #204899)",
-    mainBackground: "#a9bbe0",
-    textColor: "#ffffff",
+    backgroundColor: "linear-gradient(to right, #001b53, #204899)",
+    mainBackground: "linear-gradient(to right, #87acf7, #b0c7ea)",
     headHoverColor: "#1e5cda",
-    menuColor: "#577ece",
+    centerDivColor: "#b6d1fb",
+    textColor: "#ffffff",
+    menuColor: "#577ece"
 };
 const dark = {
     key: "dark",

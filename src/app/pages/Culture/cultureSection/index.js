@@ -8,7 +8,7 @@ import {
 } from '../../../components';
 import axios from 'axios';
 
-const LiteratureSection = () => {
+const cultureSection = () => {
     const [cards,setCards]=useState([]);
     const [isLoading, setIsLoading]=useState(true);
     const classes = useStyles();
@@ -17,7 +17,7 @@ const LiteratureSection = () => {
             try {
                 const {
                     data: res
-                } = await axios.get(`http://localhost:3001/literature`);
+                } = await axios.get(`http://localhost:3001/culture`);
                 setCards(res.payload);
                 setIsLoading(false);
             } catch (err) {
@@ -29,8 +29,8 @@ const LiteratureSection = () => {
     return <div className={classes.cards}>
         {isLoading ? <img src="./images/icons/loading.gif" style={{
             paddingTop: "100px",
-            height: "80px",
-            width: "80px"
+            height: "100px",
+            width: "100px"
         }}/> :
             cards.map((item,index)=>{
                 return(
@@ -47,4 +47,4 @@ const LiteratureSection = () => {
         }
     </div>;
 };
-export default LiteratureSection;
+export default cultureSection;

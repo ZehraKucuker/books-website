@@ -1,10 +1,11 @@
 const color = {
     primary: "#2843F6",
-    backgroundColor: "#82a8e1",
-    mainBackground: "#c9ddfb",
-    textColor: "#000000",
+    backgroundColor: "linear-gradient(to right, #227dca, #66a3d7)",
+    mainBackground: "linear-gradient(to right, #87acf7, #c9ddfb)",
     headHoverColor: "#c2d6ff",
-    menuColor: "#a8c1f4",
+    centerDivColor: "#c5dbfe",
+    textColor: "#000000",
+    menuColor: "#a8c1f4"
 };
 const light = {
     key: "light",

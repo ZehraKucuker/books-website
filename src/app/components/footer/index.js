@@ -18,19 +18,16 @@ const Footer = () => {
     const classes = useStyles({
         colors: activeTheme.color
     });
-    return (
-        <div className={classes.footerContainer}>
-            <div className={classes.logo}>
-                <img src="./images/icons/logo2.png" alt="" style={{
-                    width: "40px",
-                    height: "40px"
-                }}/>
-            </div>
-            <div className={classes.copyrighter}>
-                <span>{lang.copyright}</span>
-            </div>
+    return <div className={classes.footerContainer}>
+        <div className={classes.logo}>
+            <img src="./images/icons/logo2.png" alt="" style={{
+                width: "40px",
+                height: "40px"
+            }}/>
         </div>
-    );
+        <div className={classes.copyrighter}>
+            <span>{lang.copyright}</span>
+        </div>
+    </div>;
 };
-
 export default Footer;
