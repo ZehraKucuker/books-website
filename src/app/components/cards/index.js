@@ -21,7 +21,7 @@ const Cards = (
         colors: activeTheme.color
     });
     const [showDiv, setShowDiv] = useState(false);
-    const handleButtonClick = () => {
+    const handleButtonClick = (e) => {
         setShowDiv(!showDiv);
     };
     const [isHover, setIsHover] = useState(false);
@@ -37,8 +37,8 @@ const Cards = (
                 display: "flex",
             }}>
                 <div className={classes.cardContent} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                    <div className={classes.card} style={{
-                        boxShadow: isHover ? "6px 10px 6px #000" : "3px 6px 3px #000",
+                    <div style={{
+                        boxShadow: isHover ? "6px 10px 6px #000" : "3px 6px 3px #000"
                     }}>
                         <img src={imageURL} alt={title} onClick={handleButtonClick} style={{
                             height: "300px",
@@ -47,28 +47,24 @@ const Cards = (
                         }}/>
                         {showDiv && (
                             <div className={classes.centerContainer}>
-                                <FaTimes style={{
-                                    position: "fixed",
-                                    right: 30,
-                                    top: 30,
-                                    width: "30px",
-                                    height: "30px"
-                                }} onClick={handleButtonClick}/>
+                                <FaTimes className={classes.icon} onClick={handleButtonClick}/>
                                 <div className={classes.centerLeftSide}>
                                     <h1 style={{
-                                        fontSize: 30
+                                        fontSize: 26
                                     }}>{title}</h1>
-                                    <h3>{author} | {publisher}</h3>
+                                    <h3 style={{
+                                        fontSize: 16
+                                    }}>{author} | {publisher}</h3>
                                 </div>
                                 <div style={{
                                     width: "40px",
-                                    height: "400px",
+                                    height: "300px",
                                     borderLeft: "2px solid #0a1526"
                                 }}></div>  
                                 <div className={classes.centerRightSide}>
                                     <p className={classes.description}>{description}</p>
                                     <button className={classes.button}>
-                                        <a className={classes.buttonText} href={buyURL} target="_blank">Detaylı bilgi için tıklayınız.</a>
+                                        <a className={classes.buttonText} href={buyURL} target="_blank">Detaylı bilgi almak veya satın almak için tıklayınız.</a>
                                     </button>
                                 </div>
                             </div>

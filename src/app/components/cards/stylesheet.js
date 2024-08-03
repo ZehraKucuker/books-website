@@ -34,11 +34,11 @@ const useStyles = createUseStyles({
             colors
         })=>colors.centerDivColor,
         transform: "translate(-50%, -50%)",
-        boxShadow: " 1px 1px 4px 1px #000",
+        boxShadow: "1px 1px 1px #000",
         border: "1px solid #000",
         flexDirection: "row",
-        alignItems: "center",
         borderRadius: "40px",
+        alignItems: "center",
         position: "fixed",
         display: "flex",
         height: "65%",
@@ -62,6 +62,13 @@ const useStyles = createUseStyles({
         display: "flex",
         width: "50%",
         gap: 20
+    },
+    icon: {
+        position: "fixed",
+        right: 30,
+        top: 30,
+        width: "30px",
+        height: "30px"
     },
     description: {
         "@media screen and (max-width: 1200px)": {

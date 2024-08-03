@@ -27,11 +27,12 @@ const HistorySection = () => {
         fetchData();
     }, []);
     return <div className={classes.cards}>
-        {isLoading ? <img src="./images/icons/loading.gif" style={{
+        {isLoading ? <div className={classes.loading}> <img src="./images/icons/loading.gif" style={{
             paddingTop: "100px",
             height: "80px",
             width: "80px"
-        }}/> :
+        }}/>
+        </div> :
             cards.map((item,index)=>{
                 return(
                     <Cards

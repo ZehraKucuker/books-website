@@ -9,7 +9,7 @@ const useStyles = createUseStyles({
         })=>colors.mainBackground,
         flexDirection: 'column',
         display: 'flex',
-        height: "700px",
+        height: "100%",
         width: "100%",
     },
     title: {
