@@ -4,6 +4,7 @@ const color = {
     mainBackground: "linear-gradient(to right, #87acf7, #b0c7ea)",
     headHoverColor: "#1e5cda",
     centerDivColor: "#b6d1fb",
+    selectionColor: "#3060a6",
     textColor: "#ffffff",
     menuColor: "#577ece"
 };

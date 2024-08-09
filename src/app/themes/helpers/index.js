@@ -1,16 +1,10 @@
 export const clickEvent = () => {
     return {
-        "&:hover": {
-            cursor: "pointer",
-            color: "#7ba6ff"
-        },
         "&:active": {
-            transform: "translateY(2px)",
-            transition: "transform 0.1s",
-            userSelect: "none"
+            transition: "transform 0.05s",
+            transform: "translateY(1px)",
         },
-        "&:selection": {
-            color: "#7ba6ff"
+        "&:hover": {
         }
     };
 };

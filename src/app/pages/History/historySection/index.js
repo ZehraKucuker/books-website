@@ -12,18 +12,18 @@ const HistorySection = () => {
     const [cards,setCards]=useState([]);
     const [isLoading, setIsLoading]=useState(true);
     const classes = useStyles();
+    const fetchData = async () => {
+        try {
+            const {
+                data: res
+            } = await axios.get(`http://localhost:3001/history`);
+            setCards(res.payload);
+            setIsLoading(false);
+        } catch (err) {
+            console.error(err);
+        }
+    };
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const {
-                    data: res
-                } = await axios.get(`http://localhost:3001/history`);
-                setCards(res.payload);
-                setIsLoading(false);
-            } catch (err) {
-                console.error(err);
-            }
-        };
         fetchData();
     }, []);
     return <div className={classes.cards}>

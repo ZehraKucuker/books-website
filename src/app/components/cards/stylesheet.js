@@ -21,13 +21,11 @@ const useStyles = createUseStyles({
         height: "300px",
         width: "200px"
     },
-    cardBackSide: {
-        flexDirection:"column",
-        fontSize: "10px",
-        display: "flex",
-        bottom: 0,
-        gap: 20,
-        top: 0
+    card: {
+        boxShadow: "3px 6px 3px #000",
+        "&:hover": {
+            boxShadow: "6px 10px 6px #000",
+        }
     },
     centerContainer: {
         backgroundColor: ({
@@ -45,7 +43,11 @@ const useStyles = createUseStyles({
         width: "50%",
         left: "50%",
         top: "50%",
-        zIndex: 2
+        zIndex: 2,
+        "@media screen and (max-width: 900px)": {
+            height: "55%",
+            width: "60%"
+        }
     },
     centerLeftSide: {
         flexDirection: "column",

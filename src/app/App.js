@@ -9,18 +9,19 @@ import {
 import {
     LanguageProvider 
 } from './context/languageContext';
+import {
+    MENU
+} from './constants';
 
 const App = () => {
-    return (
-        <div>
-            <ThemeProvider>
-                <LanguageProvider> 
-                    <Header/>
-                    <Routers/>
-                    <Footer/>
-                </LanguageProvider> 
-            </ThemeProvider>
-        </div>
-    );
+    return <div>
+        <ThemeProvider>
+            <LanguageProvider> 
+                <Header/>
+                <Routers/>
+                <Footer/>
+            </LanguageProvider> 
+        </ThemeProvider>
+    </div>;
 };
 export default App;

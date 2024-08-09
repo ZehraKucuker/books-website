@@ -3,7 +3,7 @@ import {
 } from 'react-jss';
 import {
     clickEvent 
-} from '../../themes/helpers/index';
+} from '../../themes/helpers';
 
 const useStyles = createUseStyles({
     headerContainer: {
@@ -36,10 +36,7 @@ const useStyles = createUseStyles({
     },
     headerDescContainer: {
         marginLeft: "20px",
-        "&:active": {
-            transition: "transform 0.05s",
-            transform: "translateY(1px)",
-        }
+        ...clickEvent()
     },
     headerContent: {
         color: ({
@@ -57,7 +54,7 @@ const useStyles = createUseStyles({
     menuVisible: {
         justifyContent: "space-between",
         display:"flex",
-        "@media screen and (max-width: 900px)": {
+        "@media screen and (max-width: 1000px)": {
             justifyContent: "space-evenly",
             backgroundColor: ({
                 colors
@@ -81,8 +78,8 @@ const useStyles = createUseStyles({
         alignItems: "center",
         display: "flex",
         width: "100%",
-        ...clickEvent,
-        "@media screen and (max-width: 900px)": {
+        ...clickEvent(),
+        "@media screen and (max-width: 1000px)": {
             paddingBottom: "400px",
             flexDirection:"column",
             paddingLeft: "80px",
@@ -90,27 +87,23 @@ const useStyles = createUseStyles({
             fontSize: "30px",
             display: "flex",
             width:"175px",
-            gap: "10px"
-        },
-        "&:active": {
-            transition: "transform 0.05s",
-            transform: "translateY(1px)",
+            gap: "20px"
         }
     },
     menuContent: {
-        color: ({
-            colors
-        })=>colors.textColor,
         transition: "0.5s ease",
         textDecoration: "none",
         fontWeight: "inherit",
         fontSize: 20,
+        color: ({
+            colors 
+        }) => colors.textColor,
         "&:hover": {
             color: ({
                 colors
             })=>colors.headHoverColor
         },
-        "@media screen and (max-width: 900px)": {
+        "@media screen and (max-width: 1000px)": {
             "&:hover": {
                 color: ({
                     colors
@@ -118,9 +111,17 @@ const useStyles = createUseStyles({
             }
         }
     },
+    activeMenuContent: {
+        color: ({
+            colors 
+        }) => colors.selectionColor,
+        textDecoration: "none",
+        fontWeight: "inherit",
+        fontSize: 20,
+    },
     menuShow: {
         display:"none",
-        "@media screen and (max-width: 900px)":{
+        "@media screen and (max-width: 1000px)":{
             color: ({
                 colors
             })=>colors.textColor,
@@ -136,10 +137,10 @@ const useStyles = createUseStyles({
         marginLeft: "35px",
         display:"flex",
         gap: "5px",
-        "@media screen and (max-width: 900px)": {
+        "@media screen and (max-width: 1000px)": {
             flexDirection: "row",
             paddingLeft: "60px",
-            paddingTop: "60px",
+            paddingTop: "30px",
             alignItems: "start",
             fontSize: "30px",
             display: "flex",
@@ -151,14 +152,14 @@ const useStyles = createUseStyles({
         "&:hover": {
             color: ({
                 colors
-            })=>colors.headHoverColor,
+            })=>colors.headHoverColor
         }
     },
     iconTheme: {
         "&:hover": {
             color: ({
                 colors
-            })=>colors.headHoverColor,
+            })=>colors.headHoverColor
         }
     }
 });

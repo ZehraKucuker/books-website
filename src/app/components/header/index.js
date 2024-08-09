@@ -1,10 +1,10 @@
 import React from 'react';
 import useStyles from './stylesheet';
 import {
-    useState 
+    useState
 } from 'react';
 import {
-    Link 
+    Link
 } from 'react-router-dom';
 import {
     Fade as Hamburger 
@@ -16,6 +16,9 @@ import {
     useLanguage 
 } from '../../context/languageContext';
 import {
+    useMenu
+} from '../../constants';
+import {
     GrLanguage 
 } from "react-icons/gr";
 import {
@@ -26,8 +29,10 @@ import {
 } from "react-icons/fa6";
 
 const Header = () => {
+    const MENU = useMenu();
     const [isIconActive, setIsIconActive] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(null);
     const {
         activeTheme, changeTheme
     }=useTheme();
@@ -42,6 +47,9 @@ const Header = () => {
         setIsIconActive(!isIconActive);
         changeTheme();
     };
+    const handleLinkClick = (index) => {
+        setActiveIndex(index);
+    };
     return <div className={classes.headerContainer} >
         <div className={classes.headerLeftSideContainer}>
             <img
@@ -54,28 +62,19 @@ const Header = () => {
             </div>
         </div>
         <div className={classes.headerRightSideContainer}>
-        
-            <div className={classes.menuVisible}>
-            
+            <div className={classes.menuVisible}>  
                 <div className={classes.menuContentContainer}>
-                    <div>
-                        <Link to="/home" className={classes.menuContent}>{lang.home}</Link>
-                    </div>
-                    <div>
-                        <Link to="/literature" className={classes.menuContent}>{lang.cateName1}</Link>
-                    </div>
-                    <div>
-                        <Link to="/philosophy" className={classes.menuContent}>{lang.cateName2}</Link>
-                    </div>
-                    <div>
-                        <Link to="/culture" className={classes.menuContent}>{lang.cateName3}</Link>
-                    </div>
-                    <div>
-                        <Link to="/psychology" className={classes.menuContent}>{lang.cateName4}</Link>
-                    </div>
-                    <div>
-                        <Link to="/history" className={classes.menuContent}>{lang.cateName5}</Link>
-                    </div>
+                    {MENU.map((item, index) => {
+                        return <Link
+                            key={`menu-item-${index}`}
+                            to={item.path}
+                            className={index === activeIndex ? classes.activeMenuContent : classes.menuContent}
+                            onClick={() => handleLinkClick(index)}
+                        >
+                            {item.title}
+                        </Link>;
+                    })
+                    }
                 </div>
                 <div className={classes.iconContainer}>
                     <div className={classes.iconLang}>

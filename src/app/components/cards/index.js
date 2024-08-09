@@ -11,7 +11,12 @@ import {
 
 const Cards = (
     {
-        title, author, publisher, description, imageURL, buyURL
+        title, 
+        author, 
+        publisher, 
+        description, 
+        imageURL, 
+        buyURL
     }
 ) => {
     const {
@@ -24,22 +29,11 @@ const Cards = (
     const handleButtonClick = (e) => {
         setShowDiv(!showDiv);
     };
-    const [isHover, setIsHover] = useState(false);
-    const handleMouseEnter = () => {
-        setIsHover(true);
-    };
-    const handleMouseLeave = () =>{
-        setIsHover(false);
-    };
     return <div>
         <div className={classes.cardContainer}>
-            <div className={classes.cardContentContainer} style={{
-                display: "flex",
-            }}>
-                <div className={classes.cardContent} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                    <div style={{
-                        boxShadow: isHover ? "6px 10px 6px #000" : "3px 6px 3px #000"
-                    }}>
+            <div className={classes.cardContentContainer}>
+                <div className={classes.cardContent}>
+                    <div className={classes.card}>
                         <img src={imageURL} alt={title} onClick={handleButtonClick} style={{
                             height: "300px",
                             width: "100%",
