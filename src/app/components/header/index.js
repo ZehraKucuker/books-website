@@ -17,7 +17,7 @@ import {
 } from '../../context/languageContext';
 import {
     useMenu
-} from '../../constants';
+} from '../constants';
 import {
     GrLanguage 
 } from "react-icons/gr";

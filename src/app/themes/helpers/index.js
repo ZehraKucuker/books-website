@@ -5,6 +5,9 @@ export const clickEvent = () => {
             transform: "translateY(1px)",
         },
         "&:hover": {
+            color: ({
+                colors
+            })=>colors.headHoverColor,
         }
     };
 };

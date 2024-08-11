@@ -9,9 +9,6 @@ import {
 import {
     LanguageProvider 
 } from './context/languageContext';
-import {
-    MENU
-} from './constants';
 
 const App = () => {
     return <div>

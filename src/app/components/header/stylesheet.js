@@ -5,7 +5,7 @@ import {
     clickEvent 
 } from '../../themes/helpers';
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme) => ({
     headerContainer: {
         backgroundImage: ({
             colors
@@ -35,8 +35,7 @@ const useStyles = createUseStyles({
         width: "50px"
     },
     headerDescContainer: {
-        marginLeft: "20px",
-        ...clickEvent()
+        marginLeft: "20px"
     },
     headerContent: {
         color: ({
@@ -45,11 +44,7 @@ const useStyles = createUseStyles({
         textDecoration: "none",
         fontWeight: "bold",
         fontSize: "24px",
-        "&:hover": {
-            color: ({
-                colors
-            })=>colors.headHoverColor,
-        }
+        ...clickEvent()
     },
     menuVisible: {
         justifyContent: "space-between",
@@ -78,7 +73,6 @@ const useStyles = createUseStyles({
         alignItems: "center",
         display: "flex",
         width: "100%",
-        ...clickEvent(),
         "@media screen and (max-width: 1000px)": {
             paddingBottom: "400px",
             flexDirection:"column",
@@ -98,11 +92,7 @@ const useStyles = createUseStyles({
         color: ({
             colors 
         }) => colors.textColor,
-        "&:hover": {
-            color: ({
-                colors
-            })=>colors.headHoverColor
-        },
+        ...clickEvent(),
         "@media screen and (max-width: 1000px)": {
             "&:hover": {
                 color: ({
@@ -149,18 +139,10 @@ const useStyles = createUseStyles({
         }
     },
     iconLang:{
-        "&:hover": {
-            color: ({
-                colors
-            })=>colors.headHoverColor
-        }
+        ...clickEvent()
     },
     iconTheme: {
-        "&:hover": {
-            color: ({
-                colors
-            })=>colors.headHoverColor
-        }
+        ...clickEvent()
     }
-});
+}));
 export default useStyles;
