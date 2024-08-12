@@ -9,9 +9,9 @@ import {
 import axios from 'axios';
 
 const HistorySection = () => {
+    const classes = useStyles();
     const [cards,setCards]=useState([]);
     const [isLoading, setIsLoading]=useState(true);
-    const classes = useStyles();
     const fetchData = async () => {
         try {
             const {

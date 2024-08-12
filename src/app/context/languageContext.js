@@ -16,10 +16,8 @@ export const LanguageProvider=({
         changeLanguage
     };
 
-    return (
-        <LanguageContext.Provider value={values}>
-            {children}
-        </LanguageContext.Provider>
-    );
+    return <LanguageContext.Provider value={values}>
+        {children}
+    </LanguageContext.Provider>;
 };
 export const useLanguage = () => useContext(LanguageContext);

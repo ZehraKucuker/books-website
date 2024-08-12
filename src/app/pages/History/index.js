@@ -19,7 +19,6 @@ const History = () => {
     const classes = useStyles({
         colors: activeTheme.color 
     });
-    
     return <div className={classes.literatureContainer}>
         <div className={classes.title}>
             <h1>{lang.category5}</h1>

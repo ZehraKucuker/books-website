@@ -19,15 +19,42 @@ const Cards = (
         buyURL
     }
 ) => {
+    const [showDiv, setShowDiv] = useState(false);
     const {
         activeTheme
     }=useTheme();
     const classes = useStyles({
         colors: activeTheme.color
     });
-    const [showDiv, setShowDiv] = useState(false);
     const handleButtonClick = (e) => {
         setShowDiv(!showDiv);
+    };
+    const renderShowDiv = () => {
+        if(!showDiv) {
+            return null;
+        }
+        return <div className={classes.centerContainer}>
+            <FaTimes className={classes.icon} onClick={handleButtonClick}/>
+            <div className={classes.centerLeftSide}>
+                <h1 style={{
+                    fontSize: 26
+                }}>{title}</h1>
+                <h3 style={{
+                    fontSize: 16
+                }}>{author} | {publisher}</h3>
+            </div>
+            <div style={{
+                width: "40px",
+                height: "300px",
+                borderLeft: "2px solid #0a1526"
+            }}></div>  
+            <div className={classes.centerRightSide}>
+                <p className={classes.description}>{description}</p>
+                <button className={classes.button}>
+                    <a className={classes.buttonText} href={buyURL} target="_blank">Detaylı bilgi almak veya satın almak için tıklayınız.</a>
+                </button>
+            </div>
+        </div>;
     };
     return <div>
         <div className={classes.cardContainer}>
@@ -39,30 +66,7 @@ const Cards = (
                             width: "100%",
                             zIndex: 1
                         }}/>
-                        {showDiv && (
-                            <div className={classes.centerContainer}>
-                                <FaTimes className={classes.icon} onClick={handleButtonClick}/>
-                                <div className={classes.centerLeftSide}>
-                                    <h1 style={{
-                                        fontSize: 26
-                                    }}>{title}</h1>
-                                    <h3 style={{
-                                        fontSize: 16
-                                    }}>{author} | {publisher}</h3>
-                                </div>
-                                <div style={{
-                                    width: "40px",
-                                    height: "300px",
-                                    borderLeft: "2px solid #0a1526"
-                                }}></div>  
-                                <div className={classes.centerRightSide}>
-                                    <p className={classes.description}>{description}</p>
-                                    <button className={classes.button}>
-                                        <a className={classes.buttonText} href={buyURL} target="_blank">Detaylı bilgi almak veya satın almak için tıklayınız.</a>
-                                    </button>
-                                </div>
-                            </div>
-                        )}
+                        {renderShowDiv()}
                     </div>
                 </div>
             </div>

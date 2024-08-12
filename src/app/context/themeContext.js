@@ -16,11 +16,9 @@ export const ThemeProvider=({
         activeTheme,
         changeTheme,
     };
-    return (
-        <ThemeContext.Provider value={values}>
-            {children}
-        </ThemeContext.Provider>
-    );
+    return <ThemeContext.Provider value={values}>
+        {children}
+    </ThemeContext.Provider>;
 };
 
 export const useTheme = () => useContext(ThemeContext);

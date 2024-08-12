@@ -17,7 +17,7 @@ import {
 } from '../../context/languageContext';
 import {
     useMenu
-} from '../constants';
+} from '../../constants';
 import {
     GrLanguage 
 } from "react-icons/gr";
@@ -30,9 +30,9 @@ import {
 
 const Header = () => {
     const MENU = useMenu();
-    const [isIconActive, setIsIconActive] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState(null);
+    const [isIconActive, setIsIconActive] = useState(true);
     const {
         activeTheme, changeTheme
     }=useTheme();

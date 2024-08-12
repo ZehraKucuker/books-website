@@ -1,6 +1,6 @@
 import {
     useLanguage 
-} from '../../context/languageContext';
+} from '../context/languageContext';
 
 export const useMenu = () => {
     const {
